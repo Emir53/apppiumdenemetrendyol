@@ -11,12 +11,64 @@ public class HomePage extends CommonFunctions{
 
 
     @FindBy(id = "trendyol.com:id/tab_account")
-    public WebElement myAccount;
+    public WebElement myAccountTab;
+
+    @FindBy(id = "trendyol.com:id/tab_basket")
+    public WebElement myBasketTab;
+
+    @FindBy(id = "trendyol.com:id/tab_home")
+    public WebElement homeTab;
+
+    @FindBy(id="trendyol.com:id/tab_second")
+    public WebElement trendyolGoTab;
+
+    @FindBy(id = "trendyol.com:id/tab_favorites")
+    public WebElement myFavoritesTab;
+
+    @FindBy(id = "trendyol.com:id/frameLayoutNotificationContainer")
+    public WebElement notificationContainer;
+
+    @FindBy(id = "trendyol.com:id/edittext_search_view")
+    public WebElement searchBox;
+
+    @FindBy(id = "trendyol.com:id/imageview_action_start")
+    public WebElement searchBoxİcon;
+
+    @FindBy(id = "trendyol.com:id/textViewHomepageTab")
+    public WebElement discoverCategory;
+
+
 
 
 
 
     public void goToMyAccount(){
-        click((By) myAccount);
+        click((By) myAccountTab);
+    }
+
+    public void goToMyBAseket(){
+        click((By) myBasketTab);
+    }
+
+    public void goToMyFavorites(){
+        click((By) myFavoritesTab);
+    }
+
+    public void goToTrendyolGo(){
+        click((By) trendyolGoTab);
+    }
+
+    public void goToHomeTab(){
+        click((By) homeTab);
+    }
+
+    public void serachAnItem(String text){
+        type((By) searchBox,text);
+        click((By) searchBoxİcon);
+
+    }
+
+    public void clickOnSearchButton(){
+        click((By) searchBoxİcon);
     }
 }

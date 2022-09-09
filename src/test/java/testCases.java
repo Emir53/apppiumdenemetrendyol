@@ -1,3 +1,5 @@
+import org.junit.jupiter.api.Assertions;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.nio.channels.SelectableChannel;
@@ -7,6 +9,7 @@ public class testCases extends BaseTest{
     HomePage homePage;
     LoginPage loginPage;
     selectUntilHomePage SelectUntilHomePage;
+    RegisterPage registerPage;
 
 
     @Test
@@ -17,6 +20,34 @@ public class testCases extends BaseTest{
         loginPage.typePassword("your password here");
         loginPage.clickLogİnButton();
 
+
+    }
+
+
+    @Test
+    public void registerNewFemaleUser(String yourEmail,String yourPassword){
+        SelectUntilHomePage.goUntilhomePage();
+        homePage.goToMyAccount();
+        loginPage.clickRegisterButton();
+        registerPage.registerANewFemaleAccount(yourEmail,yourPassword);
+
+    }
+
+    @Test
+    public void registerNewMaleUser(String yourEmail,String yourPassword){
+        SelectUntilHomePage.goUntilhomePage();
+        homePage.goToMyAccount();
+        loginPage.clickRegisterButton();
+        registerPage.registerANewMaleAccount(yourEmail,yourPassword);
+
+    }
+
+    @Test
+    public void registerNewUserWithoutGender(String yourEmail,String yourPassword){
+        SelectUntilHomePage.goUntilhomePage();
+        homePage.goToMyAccount();
+        loginPage.clickRegisterButton();
+        registerPage.registerWithoutGender(yourEmail,yourPassword);
 
     }
 
